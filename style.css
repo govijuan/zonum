@@ -100,7 +100,9 @@ nav a:hover{
 h1{font-size: 26px;}
 h2{font-size: 22px;}
 h3{font-size: 18px;}
+h1, h2, h3{font-family: "Aileron-Black", sans-serif; }
 a{text-decoration: none; }
+.text-wrapper h2{font-size: 44px;}
 
 .centered-80{width: 80%; margin: 0 auto; padding: 20px;}
 
@@ -117,7 +119,7 @@ Estilos para lo que está en destaque
 
 .projectMiniImg{ width: 400px; height: 260px; overflow: hidden; position: absolute; top: 320px}
 .photo-wrapper{ z-index: 0; }
-.text-wrapper{width: 400px; height: 260; overflow: hidden; position: absolute; top:0; color: #fff; word-wrap: break-word; text-align: center;margin: 0 5px;}
+.text-wrapper{width: 400px; height: 260; overflow: hidden; position: absolute; top:0; color: #fff; word-wrap: break-word; text-align: center;margin: 0 5px; height: 100%; background: rgba(0,0,0,0.5);}
 .photo-wrapper{ margin: 0 5px; overflow: hidden;}
 .tit-proy-destaque{font-size: 30px;}
 .tit-proy-destaque a{color: #fff;}

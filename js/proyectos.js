@@ -1,5 +1,5 @@
 
-
+var sliderObj = new Object();
 function createSlickSlider(){
 	jQuery('.project-holder').slick({
 				
@@ -37,17 +37,22 @@ function createSlickSlider(){
 function setprojectsHolderWidth(){
 	jQuery('.project-holder').css('width', windowWidth +'px');
 }
+
 function setSlidedimentions(){
 	var oneThirdWidth = Math.round(windowWidth/3);
 	jQuery('.slick-slide').css('width', oneThirdWidth +'px');
-	var GetSliderPhotoWrapperWidth = jQuery('.slick-slide').width();
 	var photoWrapperWidth = jQuery('.photo-wrapper').width();
 	var photoWrapperheight = photoWrapperWidth * 0.6494;
 	var sliderPhotoWidth = Math.round(photoWrapperWidth * 1.394);
 	jQuery('.photo-wrapper').css('height', photoWrapperheight + 'px');
-	var sliderTextWrapperWidth = (jQuery('.photo-wrapper').innerWidth()) * 0.915;
+	var sliderTextWrapperWidth = ((windowWidth - 120) / 3) -10;
 	jQuery('.photo-wrapper img').css('width', sliderPhotoWidth + 'px');
 	jQuery('.text-wrapper').css('width', sliderTextWrapperWidth + 'px');
+	console.log(sliderTextWrapperWidth);
+}
+
+function slideHoverBehavior(){
+	$('').animate();
 }
 
 var SliderObj = new Object();
@@ -58,10 +63,7 @@ jQuery(document).ready(function($){
 	windowWidth = jQuery(window).width();
 	
     setprojectsHolderWidth();
-    //projectHolderHeight = ($('.project-holder').width()) * 0.2126;
-    //$('.project-holder').css('height', projectHolderHeight + 'px');
-	createSlickSlider();
-	//acomodProyPantalla(windowWidth);
+   	createSlickSlider();
 	setSlidedimentions();
 	 
 	 
@@ -70,7 +72,6 @@ jQuery(document).ready(function($){
 
 jQuery( window ).resize(function() {
 	windowWidth = jQuery(window).width();
-	//projectHolderHeight = windowWidth * 0.0456;
 	setprojectsHolderWidth();
 	setSlidedimentions();
 	
