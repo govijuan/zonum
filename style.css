@@ -1,0 +1,130 @@
+/*
+Theme Name: Zonum
+Theme URI: http://jccriacaodesites.com.br
+Author: Juan Carlos Coral
+Author URI: http://wordpress.org/
+Description: This is the first Wordpress Theme created by Juan Carlos Coral.
+Version: 1.0
+Text Domain: jccriacaodesites
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+/* Structure */
+
+body{
+	font: 16px arial, sans-serif;
+	background: #e0e0e0
+}
+
+#container{
+	overflow: auto;
+	}
+footer{
+	
+	color: #fff;
+	position: fixed;
+	height: 5%
+	
+}
+
+.clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix { display: inline-block; width: 100%;}
+  
+html[xmlns] .clearfix { display: block; }
+* html .clearfix { height: 1%; }
+header, footer, nav, #container{
+	width: 100%;
+	margin: 0 auto;
+	
+}
+#bgThree{
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    opacity: 0.3;
+    z-index: -1;
+    
+}
+
+#rotateTablet {
+    background-color: rgba(201, 201, 201, 1);
+    position: fixed;
+    overflow: hidden;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-image: url('./images/rollTablet2x.png');
+    background-repeat: no-repeat;
+    z-index: 3200;
+    background-position: center center;
+    -moz-background-size: 319px 367px;
+    -ie-background-size: 319px 367px;
+    -o-background-size: 319px 367px;
+    -webkit-background-size: 319px 367px;
+    background-size: 319px 367px;
+}
+#sidebar{
+	 
+	 float: right; 
+	 width: 200px; 
+}
+#left{
+	float: left;
+	width: 758px; 
+}
+
+.logo-container{ display: block; position: relative;}
+
+nav ul li{
+	display: inline-block;
+	border-bottom: 2px solid #fff;
+	border-top: 2px solid #fff;
+	border-left: 2px solid #fff;
+	margin-right: -5px;
+	
+}
+nav ul li:last-child{border-right: 2px solid #fff;}
+nav a{color: #fff; display:block;padding: 10px 20px;}
+nav a:hover{
+	color: #0d2233; background: #fff;
+}
+ Text Rules 
+
+h1{font-size: 26px;}
+h2{font-size: 22px;}
+h3{font-size: 18px;}
+a{text-decoration: none; }
+
+.centered-80{width: 80%; margin: 0 auto; padding: 20px;}
+
+Estilos para lo que está en destaque
+.project-holder{ }
+
+.h-featured-txt-wrapp{text-align: center; width: 980px; margin: 0 auto;}
+.h-featured-txt{ background: rgba(27, 27, 27, 0.3); width: 400px; display: inline-block; position: absolute; margin-top: 10px; top: 230px; left: 35%; width: 400px;}
+
+.h-featured-txt-wrapp h1, .h-featured-txt-wrapp h2, .h-featured-txt-wrapp div.featured-exerp{margin: 0 auto; text-align: left; padding: 8px 16px}
+.h-featured-bg-img{width: 100%; height: auto; margin: 0px; display: block;}
+.proyecto-wrapper{
+	}
+
+.projectMiniImg{ width: 400px; height: 260px; overflow: hidden; position: absolute; top: 320px}
+.photo-wrapper{ z-index: 0; }
+.text-wrapper{width: 400px; height: 260; overflow: hidden; position: absolute; top:0; color: #fff; word-wrap: break-word; text-align: center;margin: 0 5px;}
+.photo-wrapper{ margin: 0 5px; overflow: hidden;}
+.tit-proy-destaque{font-size: 30px;}
+.tit-proy-destaque a{color: #fff;}
+.extracto-proyecto{margin: 0 10px;}
+
+/* Logo and header Syling 
+--------------------------------------------------------------------------------------------------------------------------------*/
+
+/*.logo-img{max-height: 78px;}
+nav { box-sizing: border-box; text-align: center; width: 75%}
