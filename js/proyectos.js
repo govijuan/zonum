@@ -48,7 +48,6 @@ function setSlidedimentions(){
 	var sliderTextWrapperWidth = (jQuery('.photo-wrapper').innerWidth()) * 0.915;
 	jQuery('.photo-wrapper img').css('width', sliderPhotoWidth + 'px');
 	jQuery('.text-wrapper').css('width', sliderTextWrapperWidth + 'px');
-	console.log(sliderTextWrapperWidth);
 }
 
 var SliderObj = new Object();

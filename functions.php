@@ -54,6 +54,7 @@ function add_proyectos_supports(){
 
 
 function add_scripts_to_page(){
+	wp_enqueue_style('fonts-style', get_template_directory_uri().'/css/fonts.css');
 	wp_enqueue_style('slick-g-style', get_template_directory_uri().'/css/slick.css');
 	wp_enqueue_style('slick-theme-style', get_template_directory_uri().'/css/slick-theme.css');
 	//wp_enqueue_script('jquery');
