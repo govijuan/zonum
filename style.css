@@ -119,11 +119,19 @@ Estilos para lo que está en destaque
 
 .projectMiniImg{ width: 400px; height: 260px; overflow: hidden; position: absolute; top: 320px}
 .photo-wrapper{ z-index: 0; }
-.text-wrapper{width: 400px; height: 260; overflow: hidden; position: absolute; top:0; color: #fff; word-wrap: break-word; text-align: center;margin: 0 5px; height: 100%; background: rgba(0,0,0,0.5);}
+.text-wrapper{ overflow: hidden; position: absolute; top:0; color: #fff; word-wrap: break-word; text-align: center;margin: 0 5px; height: 100%; background: rgba(134,134,134,0.5);}
 .photo-wrapper{ margin: 0 5px; overflow: hidden;}
 .tit-proy-destaque{font-size: 30px;}
 .tit-proy-destaque a{color: #fff;}
-.extracto-proyecto{margin: 0 10px;}
+.text-wrapper p{margin: 0 10px;}
+.project-over{position: absolute;  height: 100%; top: 0px; opacity: 0.0; z-index: 10;}
+
+/* Css frames for animations --------------------------------------------------------------------------------------------------*/
+
+@-webkit-keyframes slider-hover-background {
+	from{background: rgba(134,134,134,0.5)}
+	to{background: none;}
+}
 
 /* Logo and header Syling 
 --------------------------------------------------------------------------------------------------------------------------------*/
