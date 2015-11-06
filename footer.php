@@ -1,13 +1,16 @@
 				
-			<div class="centered-80">
-				<nav><?php wp_nav_menu();?></nav>
+				
+				<?php $prime_nav_args = array	(
+													'theme_location' => 'primary'
+												)
+				?>
+				
 			
-				<div class="clearfix"></div>
-			</div>
 		</div>
+		<nav><?php wp_nav_menu($prime_nav_args);?></nav>
 		<!-- -->
 		<footer>
-			<div class="centered-980">
+			<div class="credits">
 				<?=date('Y');?> Copyright JC Criação de Sites
 			</div>
 		</footer>

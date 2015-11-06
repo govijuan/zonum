@@ -1,6 +1,31 @@
 
 var sliderObj = new Object();
+/*Slider Object Properties*/
+sliderObj.oneThirdWidth,
+sliderObj.photoWrapperWidth,
+sliderObj.phWrapHeight,
+sliderObj.phWidth,
+sliderObj.titleHeight,
+sliderObj.paragHeight,
+sliderObj.txtTopDistance,
+sliderObj.height,
+sliderObj.sliderTopPosition;
+
 var sliderTextWrapperWidth = 0;
+var windoHeight = 0;
+/* Navigation Menu object and properties*/
+var navMenuObj = new Object;
+/*properties*/
+navMenuObj.width, 
+navMenuObj.listLength, 
+navMenuObj.listItemWidth,
+navMenuObj.containerWidth,
+navMenuObj.leftPosition;
+
+var logo = new Object();
+logo.leftMargin;
+
+ 
 function createSlickSlider(){
 	jQuery('.project-holder').slick({
 				
@@ -39,57 +64,68 @@ function setprojectsHolderWidth(){
 	jQuery('.project-holder').css('width', windowWidth +'px');
 }
 
-function setSlidedimentions(){
-	var oneThirdWidth = Math.round((windowWidth - 120) / 3);
-	jQuery('.slick-slide').css('width', oneThirdWidth +'px');
-	var photoWrapperWidth = jQuery('.photo-wrapper').width();
-	var photoWrapperheight = photoWrapperWidth * 0.6494;
-	var sliderPhotoWidth = Math.round(photoWrapperWidth * 1.394);
-	jQuery('.photo-wrapper').css('height', photoWrapperheight + 'px');
-	sliderTextWrapperWidth = ((windowWidth - 120) / 3) -10;
-	jQuery('.photo-wrapper img').css('width', sliderPhotoWidth + 'px');
-	jQuery('.text-wrapper, .project-over').css('width', sliderTextWrapperWidth + 'px');
-	var sliderTitleHeight = jQuery('.text-wrapper h2').height();
-	var sliderParagraphHeight = jQuery('.text-wrapper p').height();
-	var sliderTextTopDistance = (photoWrapperheight - (sliderTitleHeight + sliderParagraphHeight))/ 2;
-	jQuery('.text-wrapper h2').css('margin-top', sliderTextTopDistance + 'px');
-	//console.log(sliderParagraphHeight);
+function setLogoPosition(){
+	logo.leftMargin = navMenuObj.leftPosition + 3;
+	jQuery('.logo-container').css('margin-left', logo.leftMargin + 'px');
 }
 
-/*function slideHoverBehavior(){
-	jQuery('.text-wrapper').mouseenter(function(){jQuery(this).fadeOut( 100 )});
-	jQuery('.text-wrapper').mouseleave(function(){jQuery(this).fadeIn( 500 )});
-}*/
+function setNavigationItems(){
+	navMenuObj.width = jQuery('#menu-menu-principal').width();
+	navMenuObj.listLength = jQuery('#menu-menu-principal li').length;
+	navMenuObj.listItemWidth = navMenuObj.width / navMenuObj.listLength;
+	jQuery('#menu-menu-principal li').css('width', navMenuObj.listItemWidth + 'px');
+	navMenuObj.containerWidth = jQuery('.menu-menu-principal-container').width();
+	navMenuObj.leftPosition = (navMenuObj.containerWidth - navMenuObj.width) / 2;
+	jQuery('#menu-menu-principal').css('margin-left', navMenuObj.leftPosition + 'px');
+	
+}
+
+function setSlidedimentions(){
+	sliderObj.oneThirdWidth = Math.round((windowWidth - 120) / 3);
+	jQuery('.slick-slide').css('width', sliderObj.oneThirdWidth +'px');
+	sliderObj.photoWrapperWidth = jQuery('.photo-wrapper').width();
+	sliderObj.phWrapHeight = sliderObj.photoWrapperWidth * 0.6494;
+	sliderObj.phWidth = Math.round(sliderObj.photoWrapperWidth * 1.394);
+	jQuery('.photo-wrapper').css('height', sliderObj.phWrapHeight + 'px');
+	sliderTextWrapperWidth = ((windowWidth - 120) / 3) -10;
+	jQuery('.photo-wrapper img').css('width', sliderObj.phWidth + 'px');
+	jQuery('.text-wrapper, .project-over').css('width', sliderTextWrapperWidth + 'px');
+	sliderObj.titleHeight = jQuery('.text-wrapper h2').height();
+	sliderObj.paragHeight = jQuery('.text-wrapper p').height();
+	sliderObj.txtTopDistance = (sliderObj.phWrapHeight - (sliderObj.titleHeight + sliderObj.paragHeight))/ 2;
+	jQuery('.text-wrapper h2').css('margin-top', sliderObj.txtTopDistance + 'px');
+	
+}
+function setProyectsWrapperPosition(){
+	
+	sliderObj.height = jQuery('.project-holder').height();
+	sliderObj.sliderTopPosition = (windoHeight - sliderObj.height) / 2;
+	jQuery('#container').css('top', sliderObj.sliderTopPosition + 'px');
+}
 
 
-var SliderObj = new Object();
-var windowWidth = 0;
-var projectHolderHeight = 0;
+//var windowWidth = 0;
 
 jQuery(document).ready(function(){
 	windowWidth = jQuery(window).width();
+	windoHeight = jQuery(window).height();
     createSlickSlider();
     setprojectsHolderWidth();
     setSlidedimentions();
-    
-   	
-   	
-	
-	//slideHoverBehavior();
+    setNavigationItems();
+    setLogoPosition()
+    setProyectsWrapperPosition();
 	jQuery('.project-over').mouseenter(function(){jQuery(this).siblings('.text-wrapper').fadeOut( 200 )});
-	jQuery('.project-over').mouseleave(function(){jQuery(this).siblings('.text-wrapper').fadeIn( 200 )});
-	/*jQuery('.text-wrapper').hover(
-	function(){jQuery(this).stop().fadeOut( 500 );},
-	function(){jQuery(this).stop().fadeIn( 500 );}
-	);*/
-	 
-		
+	jQuery('.project-over').mouseleave(function(){jQuery(this).siblings('.text-wrapper').fadeIn( 200 )});		
 });
 
 jQuery( window ).resize(function() {
 	windowWidth = jQuery(window).width();
 	setprojectsHolderWidth();
 	setSlidedimentions();
+	setNavigationItems();
+	setLogoPosition()
+    setProyectsWrapperPosition();
 });
 
 /*function acomodProyPantalla(w){

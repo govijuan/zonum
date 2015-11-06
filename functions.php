@@ -20,18 +20,28 @@ register_sidebar(array(
 	'after_title'   => '</h2>'
 
 ));
-
+register_nav_menus(array(
+	'primary' => __( 'Men&uacute; Principal'  ),
+	'mobile' => __( 'Men&uacute; para M&oacute;biles' )
+));
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
   register_post_type( 'projectos_zonum',
     array(
       'labels' => array(
         'name' => __( 'Proyectos' ),
-        'singular_name' => __( 'Proyecto' )
+        'singular_name' => __( 'Proyecto' ),
+        'add_new' => __( 'A&ntilde;adir Nuevo Proyecto' ),
+        'all_items' => __( 'Todos los Proyectos' ),
       ),
       'public' => true,
       'has_archive' => true,
       'rewrite' => array('slug' => 'proyectos'),
+      'publicly_queryable' => true,
+      'show_ui' => true,
+      'show_in_nav_menus' => true,
+      'show_in_menu' => true,
+      
     )
   );
 }
@@ -67,6 +77,7 @@ function add_scripts_to_page(){
 function mytheme_customize_register( $wp_customize ) {
    //All our sections, settings, and controls will be added here
 }
+
 add_action('wp_enqueue_scripts', 'add_scripts_to_page');
 add_action( 'customize_register', 'mytheme_customize_register' );
 
