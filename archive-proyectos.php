@@ -1,4 +1,6 @@
 <?php get_header()?>
+<div id="container">
+<div class="projects-page-title-wrap"><h1>Escenografia + Stands + Eventos</h1></div>
 <div class="project-holder" >
 <?php
 	$args = array( 'post_type' => 'projectos_zonum', 'posts_per_page' => 10 );

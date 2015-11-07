@@ -14,9 +14,15 @@
 			
 			
 		</div>
-		<div class="logo-container">
-				<a href="<?php echo home_url('/')?>"><img src="<?php echo get_option('govi_logo');?>" class="logo-img" /></a>
+		
+		<a href="<?php echo home_url('/')?>" class="logo-container">
+			<div class="color-logo-c"><img src="<?php echo get_option('govi_color_logo');?>" class="logo-img" /></div>
+			<div class="b-w-logo-c"><img src="<?php echo get_option('govi_logo');?>" class="logo-img" /></div>
+		</a>
 				
 				
+		
+		<div class="social-midia-wrap">
+			<a href="#" class="facebook-link">Facebook</a>
 		</div>
-		<div id="container">
+		

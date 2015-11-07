@@ -77,7 +77,12 @@ function setNavigationItems(){
 	navMenuObj.containerWidth = jQuery('.menu-menu-principal-container').width();
 	navMenuObj.leftPosition = (navMenuObj.containerWidth - navMenuObj.width) / 2;
 	jQuery('#menu-menu-principal').css('margin-left', navMenuObj.leftPosition + 'px');
+	jQuery('.main-navigation').css('bottom', '80px');
+	if((jQuery('.project-holder').length) > 0 && (jQuery('.current-menu-item').length) < 1){
+		jQuery('.menu-item-39').addClass('current-menu-item');
+	}
 	
+	console.log(jQuery('.project-holder').length)
 }
 
 function setSlidedimentions(){
@@ -102,19 +107,37 @@ function setProyectsWrapperPosition(){
 	sliderObj.sliderTopPosition = (windoHeight - sliderObj.height) / 2;
 	jQuery('#container').css('top', sliderObj.sliderTopPosition + 'px');
 }
+ function setProyectsTittlePosition(){
+	 jQuery('.projects-page-title-wrap').css({'bottom': (sliderObj.sliderTopPosition + sliderObj.height) + "px", 'left': navMenuObj.leftPosition + 'px'});
+}
 
+function logoHoverAnimation(){
+	jQuery(".logo-container").hover(
+		function(){
+			jQuery(this).find('.b-w-logo-c').addClass('rotate-b-w-logo').fadeOut(500);
+			jQuery(this).find('.color-logo-c').fadeIn(500).addClass('rotate-c-logo');
+		},
+		
+		function(){
+			jQuery(this).find('.b-w-logo-c').fadeIn(500).removeClass('rotate-b-w-logo');
+			jQuery(this).find('.color-logo-c').removeClass('rotate-c-logo').fadeOut(500);
+		}
+	);
+}
 
-//var windowWidth = 0;
 
 jQuery(document).ready(function(){
 	windowWidth = jQuery(window).width();
 	windoHeight = jQuery(window).height();
     createSlickSlider();
+    logoHoverAnimation();
     setprojectsHolderWidth();
     setSlidedimentions();
-    setNavigationItems();
-    setLogoPosition()
     setProyectsWrapperPosition();
+    setNavigationItems();
+    setProyectsTittlePosition();
+    //setLogoPosition()
+    
 	jQuery('.project-over').mouseenter(function(){jQuery(this).siblings('.text-wrapper').fadeOut( 200 )});
 	jQuery('.project-over').mouseleave(function(){jQuery(this).siblings('.text-wrapper').fadeIn( 200 )});		
 });
@@ -123,9 +146,11 @@ jQuery( window ).resize(function() {
 	windowWidth = jQuery(window).width();
 	setprojectsHolderWidth();
 	setSlidedimentions();
+	setProyectsWrapperPosition();
 	setNavigationItems();
-	setLogoPosition()
-    setProyectsWrapperPosition();
+	setProyectsTittlePosition();
+	//setLogoPosition()
+    
 });
 
 /*function acomodProyPantalla(w){

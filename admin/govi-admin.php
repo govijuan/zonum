@@ -83,8 +83,10 @@
 				<h2>Opciones Generales</h2>
 				<!-- Input Field -->
 				<!-- Logo Upload -->
-				<label for="our-logo-upload">Subir Imagen de Logotipo:</label>
+				<label for="our-logo-upload">Subir Imagen de Logotipo en Blanco y Negro:</label>
 				<input type="text" id="our-logo-upload" name="our-logo-upload" value="<?php echo get_option('govi_logo'); ?>"/> <input type="button" id="upload_image_logo_button" value="Subir Imagen"/>
+				<label for="our-logo-color-upload">Subir Imagen de Logotipo en Color:</label>
+				<input type="text" id="our-logo-color-upload" name="our-logo-color-upload" value="<?php echo get_option('govi_color_logo'); ?>"/> <input type="button" id="upload_image_color_logo_button" value="Subir Imagen"/>
 				<!-- Favicon Upload --><br/><br/>
 				<label for="our-favicon-upload">Subir Imagen de Favicon:</label>
 				<input type="text" id="our-favicon-upload" name="our-favicon-upload" value="<?php echo get_option('govi_favicon'); ?>"/> <input type="button" id="upload_favicon_button" value="Subir Favicon"/><br/><br/>
@@ -154,6 +156,7 @@
 			jQuery(document).ready(function($){
 				$('#general-button').live('click', function(){
 					var govilogo = $('#our-logo-upload').val();
+					var govicolorlogo = $('#our-logo-color-upload').val();
 					var govifavicon = $('#our-favicon-upload').val();
 					var govianalytics = $('#our-analytics').val();
 					var govifeatbgimage = $('#our-featured-bg-img').val();
@@ -161,6 +164,7 @@
 					var data = {
 						action: 'general_settings_action',
 						govi_logo: govilogo,
+						govi_color_logo:govicolorlogo,
 						govi_favicon: govifavicon,
 						govi_analytics: govianalytics,
 						govi_feat_bg_image: govifeatbgimage,
@@ -183,13 +187,16 @@
 	<?php
 	}
 	add_action('wp_ajax_general_settings_action', 'govi_general_settings_save');
+	
 	function govi_general_settings_save(){
 		$govi_logo = $_POST['govi_logo'];
+		$govi_color_logo = $_POST['govi_color_logo'];
 		$govi_favicon = $_POST['govi_favicon'];
 		$govi_analytics = $_POST['govi_analytics'];
 		$govi_feat_bg_image = $_POST['govi_feat_bg_image'];
 		
 		update_option( 'govi_logo', $govi_logo );
+		update_option( 'govi_color_logo', $govi_color_logo );
 		update_option( 'govi_favicon', $govi_favicon );
 		update_option( 'govi_analytics', $govi_analytics );
 		update_option('govi_feat_bg_image', $govi_feat_bg_image);

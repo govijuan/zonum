@@ -18,7 +18,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 body{
 	font: 16px Aileron-Regular, sans-serif;
-	background: #e0e0e0
+	background: #b2b2b2
 }
 
 #container{
@@ -29,9 +29,13 @@ footer{
 	
 	color: #fff;
 	position: fixed;
-	height: 5%
+	height: 25px;
+	text-align: center;
+	bottom: 0;
 	
 }
+footer a{color: #234859}
+footer a:hover{color: #3c7a93;}
 
 .clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
 .clearfix { display: inline-block; width: 100%;}
@@ -72,7 +76,6 @@ header, footer, nav, #container{
     background-size: 319px 367px;
 }
 #sidebar{
-	 
 	 float: right; 
 	 width: 200px; 
 }
@@ -80,12 +83,42 @@ header, footer, nav, #container{
 	float: left;
 	width: 758px; 
 }
+/*Logo styling and css3 animations*/
+.logo-container{ display: block; position: relative; width: 292px; height: 95px; margin-top: 15px; margin-left: 15px; float: left;}
+.logo-container img{width: 100%; height: 100%;}
+.color-logo-c{display: none;}
+.b-w-logo-c, .color-logo-c {	position: absolute;
+								-moz-transition: all 1000ms ease;
+				    			-o-transition: all 1000ms ease;
+				    			-webkit-transition: all 1000ms ease;
+				    			transition: all 1000ms ease;
+				    			
+				    			transform: rotateX(0deg);
+				    			-moz-transform: rotateX(0deg);
+				    			-o-transform: rotateX(0deg);
+				    			-webkit-transform: rotateX(0deg);
+}
+.rotate-b-w-logo, 
+.rotate-c-logo{ 	position: absolute;
+					-moz-transition: all 1000ms ease;
+	    			-o-transition: all 1000ms ease;
+	    			-webkit-transition: all 1000ms ease;
+	    			transition: all 1000ms ease;
+	    			
+					transform: rotateX(360deg);
+					-moz-transform: rotateX(360deg);
+				    -o-transform: rotateX(360deg);
+				    -webkit-transform: rotateX(360deg); 
+}
 
-.logo-container{ display: block; position: relative; width: 500px; height: auto; margin-top: 25px;}
-.logo-container a img{width: 100%; height: 100%;}
+
+.social-midia-wrap{margin: 15px 15px 0 0; float: right;}
+
+.projects-page-title-wrap{text-align: center; clear: both; position: absolute;}
+.projects-page-title-wrap h1{font-family: "DevilBreezeLight", sans-serif; font-size: 3.5em; width: 500px; display: inline-block; text-align: left; color: #ffffff;}
 
 #menu-menu-principal{width: 500px; z-index: 11;}
-
+.main-navigation{position: absolute;}
 nav ul li{
 	display: inline-block;
 	border-bottom: 2px solid #fff;
@@ -95,7 +128,7 @@ nav ul li{
 	
 }
 nav ul li:last-child{border-right: 2px solid #fff;}
-nav a{color: #fff; display:block;padding: 10px 20px; text-align: center;}
+nav a{color: #fff; display:block;padding: 15px 20px; text-align: center;}
 nav a:hover{
 	color: #0d2233; background: #fff;
 }
@@ -144,6 +177,3 @@ a{text-decoration: none; }
 /*.logo-img{max-height: 78px;}
 nav { box-sizing: border-box; text-align: center; width: 75%}*/
 
-footer{
-	text-align: center; position: absolute; bottom: 25px;
-}
