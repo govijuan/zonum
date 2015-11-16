@@ -26,7 +26,7 @@ register_nav_menus(array(
 ));
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
-  register_post_type( 'projectos_zonum',
+  register_post_type( 'proyectos',
     array(
       'labels' => array(
         'name' => __( 'Proyectos' ),
@@ -46,7 +46,7 @@ function create_post_type() {
   );
 }
 
-add_theme_support( $feature, $arguments );
+//add_theme_support( $feature, $arguments );
 
 add_action('after_setup_theme', 'add_general_theme_support');
 function add_general_theme_support(){
@@ -58,7 +58,7 @@ function add_general_theme_support(){
 //adicionando lo que soporta en las páginas e informaciones de los proyectos
 function add_proyectos_supports(){
 	$proyectos_supports = array('editor', 'author', 'thumbnail', 'excerpt', 'custom-fields' );
-	add_post_type_support( 'projectos_zonum', $proyectos_supports ) ;
+	add_post_type_support( 'proyectos', $proyectos_supports ) ;
 }
  add_action( 'init', 'add_proyectos_supports' );
 

@@ -31,7 +31,7 @@ footer{
 	position: fixed;
 	height: 25px;
 	text-align: center;
-	bottom: 0;
+	bottom: 15px;
 	
 }
 footer a{color: #234859}
@@ -54,6 +54,7 @@ header, footer, nav, #container{
     top: 0px;
     opacity: 0.3;
     z-index: -1;
+    background-repeat: no-repeat;
     
 }
 
@@ -114,8 +115,12 @@ header, footer, nav, #container{
 
 .social-midia-wrap{margin: 15px 15px 0 0; float: right;}
 
-.projects-page-title-wrap{text-align: center; clear: both; position: absolute;}
-.projects-page-title-wrap h1{font-family: "DevilBreezeLight", sans-serif; font-size: 3.5em; width: 500px; display: inline-block; text-align: left; color: #ffffff;}
+.page-title-wrap{text-align: center; clear: both; position: relative;}
+.project-page-title-wrap{text-align: center; clear: both; position: absolute;}
+.project-page-title-wrap h1{font-family: "DevilBreezeLight", sans-serif; font-size: 3.5em; width: 500px; display: inline-block; text-align: left; color: #ffffff;}
+.page-title-wrap h1{color: #ffffff; text-align: center; font-family: "DevilBreezeLight", sans-serif; font-size: 3.5em; width: 500px; display: inline-block;}
+#nosotros-content p {width: 48%;float: left; padding: 1%; font-size: 15px; text-align: justify;}
+#nosotros-container, #contacto-container{position: absolute;width: 100%;}
 
 #menu-menu-principal{width: 500px; z-index: 11;}
 .main-navigation{position: absolute;}
@@ -143,7 +148,8 @@ h1, h2, h3{font-family: "Aileron-Black", sans-serif; }
 a{text-decoration: none; }
 .text-wrapper h2{font-size: 44px;}
 
-.centered-80{width: 80%; margin: 0 auto; padding: 20px;}
+.centered{ margin: 0 auto; padding: 14px;}
+.centered p, .centered h2{color: #ffffff;}
 
 /*Estilos para lo que está en destaque*/
 
@@ -164,6 +170,12 @@ a{text-decoration: none; }
 .text-wrapper p{margin: 0 10px;}
 .project-over{position: absolute;  height: 100%; top: 0px; opacity: 0.0; z-index: 10;}
 
+#proyecto-container{width:100%; position: fixed;}
+.proyecto-txt-wrap{color: #ffffff; position: absolute; text-align: center}
+.proyecto-gallery img{height: auto; width: 100%;}
+.proyecto-gallery {position: absolute!important; right: 5.28%; height: 100%;}
+.proyecto-left-txt{text-align: justify;}
+.proyecto-txt-wrap h1{color: #ffffff; text-align: center; font-family: "DevilBreezeLight", sans-serif; font-size: 3.5em; width: 100%; display: inline-block;}
 /* Css frames for animations --------------------------------------------------------------------------------------------------*/
 
 @-webkit-keyframes slider-hover-background {
@@ -171,6 +183,24 @@ a{text-decoration: none; }
 	to{background: none;}
 }
 
+
+@media (min-width:1201px){
+	.centered{ margin: 0 auto; padding: 20px;}
+}
+@media (max-width: 980px){
+	#nosotros-content p{ width: 98%}
+}
+@media (min-width: 981px){
+	#nosotros-content p { width: 48%!important}
+}
+
+/*estilos exclusivos de Single-proyectos*/
+.proyecto-gallery .slick-dots{
+	width: 20px!important; right: -6.7%; top: 40%;
+}
+
+.credits{font-size: 12px; width: 25%; text-align: left; margin-left: 15px;}
+.slick-vertical .slick-slide{padding: 7px 0}
 /* Logo and header Syling 
 --------------------------------------------------------------------------------------------------------------------------------*/
 
