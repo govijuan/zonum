@@ -18,12 +18,11 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 body{
 	font: 16px Aileron-Regular, sans-serif;
-	background: #b2b2b2
+	background: #cccccc
 }
 
 #container{
 	overflow: auto;
-	position: absolute;
 	}
 footer{
 	
@@ -52,7 +51,7 @@ header, footer, nav, #container{
     width: 100%;
     height: 100%;
     top: 0px;
-    opacity: 0.3;
+    opacity: 0.5;
     z-index: -1;
     background-repeat: no-repeat;
     
@@ -76,69 +75,27 @@ header, footer, nav, #container{
     -webkit-background-size: 319px 367px;
     background-size: 319px 367px;
 }
-#sidebar{
-	 float: right; 
-	 width: 200px; 
-}
-#left{
-	float: left;
-	width: 758px; 
-}
+#sidebar{float: right; width: 200px;}
+#left{float: left; width: 758px;}
 /*Logo styling and css3 animations*/
-.logo-container{ display: block; position: relative; width: 292px; height: 95px; margin-top: 15px; margin-left: 15px; float: left;}
 .logo-container img{width: 100%; height: 100%;}
-.color-logo-c{display: none;}
-.b-w-logo-c, .color-logo-c {	position: absolute;
-								-moz-transition: all 1000ms ease;
-				    			-o-transition: all 1000ms ease;
-				    			-webkit-transition: all 1000ms ease;
-				    			transition: all 1000ms ease;
-				    			
-				    			transform: rotateX(0deg);
-				    			-moz-transform: rotateX(0deg);
-				    			-o-transform: rotateX(0deg);
-				    			-webkit-transform: rotateX(0deg);
-}
-.rotate-b-w-logo, 
-.rotate-c-logo{ 	position: absolute;
-					-moz-transition: all 1000ms ease;
-	    			-o-transition: all 1000ms ease;
-	    			-webkit-transition: all 1000ms ease;
-	    			transition: all 1000ms ease;
-	    			
-					transform: rotateX(360deg);
-					-moz-transform: rotateX(360deg);
-				    -o-transform: rotateX(360deg);
-				    -webkit-transform: rotateX(360deg); 
-}
-
-
-.social-midia-wrap{margin: 15px 15px 0 0; float: right;}
-
+.mobile-logo, .b-w-logo-c{display: none;}
+#home-logo-container{width: 100%; position: absolute;}
+.animated-logo-holder{}
+.a-logo-subtitle{font-family: "DevilBreezeLight", sans-serif; font-size: 41px; text-align: center; margin: 10px 0;}
 .page-title-wrap{text-align: center; clear: both; position: relative;}
-.project-page-title-wrap{text-align: center; clear: both; position: absolute;}
-.project-page-title-wrap h1{font-family: "DevilBreezeLight", sans-serif; font-size: 3.5em; width: 500px; display: inline-block; text-align: left; color: #ffffff;}
-.page-title-wrap h1{color: #ffffff; text-align: center; font-family: "DevilBreezeLight", sans-serif; font-size: 3.5em; width: 500px; display: inline-block;}
-#nosotros-content p {width: 48%;float: left; padding: 1%; font-size: 15px; text-align: justify;}
-#nosotros-container, #contacto-container{position: absolute;width: 100%;}
-
+.project-page-title-wrap{text-align: center; clear: both; }
+.project-page-title-wrap h1{font-family: "Uni-Sans-Thin", sans-serif; font-size: 3.5em; width: 500px; display: inline-block; color: #ffffff;}
+.page-title-wrap h1{color: #ffffff; text-align: center; font-family: "Uni-Sans-Thin", sans-serif;  display: inline-block;}
+#nosotros-content p, #zonum-content p {width: 48%;float: left; padding: 1%; font-size: 15px; text-align: justify;}
 #menu-menu-principal{width: 500px; z-index: 11;}
 .main-navigation{position: absolute;}
-nav ul li{
-	display: inline-block;
-	border-bottom: 2px solid #fff;
-	border-top: 2px solid #fff;
-	border-left: 2px solid #fff;
-	margin-right: -5px;
-	
-}
+nav ul li{display: inline-block; border-bottom: 2px solid #fff; border-top: 2px solid #fff; border-left: 2px solid #fff; margin-right: -5px;}
 nav ul li:last-child{border-right: 2px solid #fff;}
-nav a{color: #fff; display:block;padding: 15px 20px; text-align: center;}
-nav a:hover{
-	color: #0d2233; background: #fff;
-}
+nav a{color: #fff; display:block;padding: 15px 5px; text-align: center; font-size: 15px}
+nav a:hover{color: #3c7a93; background: #fff;}
 .current-menu-item { background: #fff;}
-.current-menu-item a{color: #0d2233!important;}
+.current-menu-item a{color: #3c7a93!important;}
  /*Text Rules*/ 
 
 h1{font-size: 26px;}
@@ -147,20 +104,14 @@ h3{font-size: 18px;}
 h1, h2, h3{font-family: "Aileron-Black", sans-serif; }
 a{text-decoration: none; }
 .text-wrapper h2{font-size: 44px;}
-
 .centered{ margin: 0 auto; padding: 14px;}
 .centered p, .centered h2{color: #ffffff;}
 
 /*Estilos para lo que está en destaque*/
-
 .h-featured-txt-wrapp{text-align: center; width: 980px; margin: 0 auto;}
 .h-featured-txt{ background: rgba(27, 27, 27, 0.3); width: 400px; display: inline-block; position: absolute; margin-top: 10px; top: 230px; left: 35%; width: 400px;}
-
 .h-featured-txt-wrapp h1, .h-featured-txt-wrapp h2, .h-featured-txt-wrapp div.featured-exerp{margin: 0 auto; text-align: left; padding: 8px 16px}
 .h-featured-bg-img{width: 100%; height: auto; margin: 0px; display: block;}
-.proyecto-wrapper{
-	}
-
 .projectMiniImg{ width: 400px; height: 260px; overflow: hidden; position: absolute; top: 320px}
 .photo-wrapper{ z-index: 0; }
 .text-wrapper{ overflow: hidden; position: absolute; top:0; color: #fff; word-wrap: break-word; text-align: center;margin: 0 5px; height: 100%; background: rgba(134,134,134,0.5);}
@@ -175,23 +126,98 @@ a{text-decoration: none; }
 .proyecto-gallery img{height: auto; width: 100%;}
 .proyecto-gallery {position: absolute!important; right: 5.28%; height: 100%;}
 .proyecto-left-txt{text-align: justify;}
-.proyecto-txt-wrap h1{color: #ffffff; text-align: center; font-family: "DevilBreezeLight", sans-serif; font-size: 3.5em; width: 100%; display: inline-block;}
-/* Css frames for animations --------------------------------------------------------------------------------------------------*/
+.proyecto-txt-wrap h1{color: #ffffff; text-align: center; font-family: "Uni-Sans-Thin", sans-serif; font-size: 3.5em; width: 100%; display: inline-block;}
+.cat-projecto{margin: 10px 0 0 0;}
+
+/* Css Responsive and frames for animations --------------------------------------------------------------------------------------------------*/
 
 @-webkit-keyframes slider-hover-background {
 	from{background: rgba(134,134,134,0.5)}
 	to{background: none;}
 }
 
-
 @media (min-width:1201px){
 	.centered{ margin: 0 auto; padding: 20px;}
+	
+}
+@media (max-width:1200px){
+	.logo-container{position: absolute!important; margin-top:0!important;}
 }
 @media (max-width: 980px){
 	#nosotros-content p{ width: 98%}
+	.slicknav_menu{display: block}
+	.main-navigation{display: none;}
+	.mobile-logo{display: block!important; width:174.5px;height: 56px}
+	.mobile-logo img{height: 56px; width: 174.5px;}
+	.b-w-logo-c, .color-logo-c{ display: none}
+	.social-midia-wrap{float: right; margin-right: 16px;}
+	.page-title-wrap h1{font-size: 2.1em; width: 320px;}
+	.project-page-title-wrap{position: relative;}
+	.project-page-title-wrap h1{ text-align: center; font-size: 2.1em}
+	#container{position: relative;}
+	#nosotros-container, #contacto-container {position: relative;width: 100%; margin: 0 0 15px 0;}
+	footer{position: relative;}
+	#contacto-content{width:80%; margin: 0 auto;}
+	.nombre-wrap, .email-wrap{width: 100%;}
+	.submit-wrap input[type=submit]{width: 100%;}
+	.page-title-wrap {margin: 0 0 15px 0}
 }
+
 @media (min-width: 981px){
 	#nosotros-content p { width: 48%!important}
+	.slicknav_menu{display: none;}
+	.social-midia-wrap{width: 3.23%; float: right;}
+	.logo-container{ display: block; position: relative; width: 292px; height: 95px; margin-top: 15px; margin-left: 15px; float: left; z-index: 10;}
+	.b-w-logo-c, .color-logo-c {	position: absolute;
+								-moz-transition: all 1000ms ease;
+				    			-o-transition: all 1000ms ease;
+				    			-webkit-transition: all 1000ms ease;
+				    			transition: all 1000ms ease;
+				    			
+				    			transform: rotateX(0deg);
+				    			-moz-transform: rotateX(0deg);
+				    			-o-transform: rotateX(0deg);
+				    			-webkit-transform: rotateX(0deg);
+	}
+	.rotate-b-w-logo, 
+	.rotate-c-logo{ 	position: absolute;
+					-moz-transition: all 1000ms ease;
+	    			-o-transition: all 1000ms ease;
+	    			-webkit-transition: all 1000ms ease;
+	    			transition: all 1000ms ease;
+	    			
+					transform: rotateX(360deg);
+					-moz-transform: rotateX(360deg);
+				    -o-transform: rotateX(360deg);
+				    -webkit-transform: rotateX(360deg); 
+	}
+	.page-title-wrap h1{font-size: 3.5em; width: 500px;}
+	.project-page-title-wrap{position: absolute;}
+	.project-page-title-wrap h1{ text-align: left;}
+	#container{position: absolute;}
+	#nosotros-container, #contacto-container {position: absolute;width: 100%;}
+	footer{position: fixed;}
+	#contacto-content{width:800px; margin: 0 auto;}
+	.nombre-wrap, .email-wrap{width: 48.5%; float: left;}
+	.nombre-wrap{ margin: 0 3% 0 0;}
+	.submit-wrap input[type=submit]{width: 500px;}
+}
+
+@media (max-width: 768px){
+	
+}
+
+@media (min-width: 769px){
+	
+}
+
+@media (max-width: 480px){
+	.link-contacto{width:100%;}
+}
+
+@media (min-width: 481px){
+	.link-contacto{width:33.3%;}
+	.animated-logo-holder img{width: 600px;}
 }
 
 /*estilos exclusivos de Single-proyectos*/
@@ -199,11 +225,35 @@ a{text-decoration: none; }
 	width: 20px!important; right: -6.7%; top: 40%;
 }
 
-.credits{font-size: 12px; width: 25%; text-align: left; margin-left: 15px;}
+.credits{font-size: 12px; width: 50%; text-align: left; margin-left: 15px;}
 .slick-vertical .slick-slide{padding: 7px 0}
-/* Logo and header Syling 
---------------------------------------------------------------------------------------------------------------------------------*/
 
-/*.logo-img{max-height: 78px;}
-nav { box-sizing: border-box; text-align: center; width: 75%}*/
+/* Styling for the Icons
+---------------------------------------------------------------------------------------------------------------------------------*/
+a.facebook-g-link, a.linkedin-g-link, a.instagram-g-link{font-family: "Iconos-Zonum-Regular", sans-serif; color: #ffffff; line-height: 30pt; font-size: 18pt;}
+/* Styling for the contact form
+----------------------------------------------------------------------------------------------------------------------------------*/
 
+input[type=text], input[type=email], textarea, input[type=submit]{background: none; border: 2px solid #fff; padding: 5px 20px; color: #ffffff!important; font-size: 100%}
+input[type=text], input[type=email]{padding: 10px;}
+.nombre-wrap, .email-wrap, .asunto-wrap, .mensaje-wrap{ margin-bottom: 10px}
+.submit-wrap input[type=submit]{height: 40px;  background: rgba(255,255,255,0.5);}
+.submit-wrap input[type=submit]:hover{ background: rgba(255,255,255,1); color: #3c7a93!important;}
+.asunto-wrap input, .mensaje-wrap textarea{width: 100%;}
+.mensaje-wrap textarea{height: 100px;}
+.nombre-wrap input, .email-wrap input{width: 100%;}
+.asunto-wrap{width: 100%; clear: both;}
+.wpcf7{color: #ffffff}
+input, textarea{box-sizing: border-box;}
+.links-contacto-wrap{margin-top: 10px;/* border-bottom: dashed 1px #fff;*/}
+.link-contacto, .link-contacto-direccion{ float: left; text-align: center; font-size: 12px; margin-top: 4px; }
+.link-contacto, .link-contacto a, .link-contacto-direccion, .link-contacto-direccion a{color: rgba(255,255,255,1);}
+.link-contacto-direccion{width:100%;}
+.skype-link, .phone-link, .mail-link, .adress-link, .whatsapp-link, .facebook-link{font-family: "Iconos-Zonum-Regular", sans-serif;  font-size: 94px; width: 100%; text-align: center; display: block;}
+.link-contacto a:hover, .link-contacto a span:hover{opacity: 0.7;}
+
+/* Styling for "Clientes" page
+----------------------------------------------------------------------------------------------------------------------------------*/
+
+.client-photo-wrapper img{width: 180px!important; width: 180px!important;}
+.cleinte-holder{width: 180px; margin: 0 7px; float: left;}

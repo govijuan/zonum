@@ -34,15 +34,33 @@ function create_post_type() {
         'add_new' => __( 'A&ntilde;adir Nuevo Proyecto' ),
         'all_items' => __( 'Todos los Proyectos' ),
       ),
+      'taxonomies' => array('category'),
       'public' => true,
       'has_archive' => true,
       'rewrite' => array('slug' => 'proyectos'),
       'publicly_queryable' => true,
       'show_ui' => true,
       'show_in_nav_menus' => true,
-      'show_in_menu' => true,
+      'show_in_menu' => true
       
     )
+  );
+  register_post_type('clientes', 
+  	array(
+  		'labels' => array(
+  			'name' => __('Clientes'),
+  			'singular_name' => __('Cliente'),
+  			'add_new' => __('A&ntilde;adir Nuevo Cliente'),
+  			'all_items' => __('Todos los Clientes')
+  		),
+  		'public' => true,
+  		'has_archive' => true,
+  		'rewrite' => array('slug' => 'clientes'),
+  		'publicly_queryable' => true,
+	    'show_ui' => true,
+	    'show_in_nav_menus' => true,
+	    'show_in_menu' => true
+  	)
   );
 }
 
@@ -61,17 +79,24 @@ function add_proyectos_supports(){
 	add_post_type_support( 'proyectos', $proyectos_supports ) ;
 }
  add_action( 'init', 'add_proyectos_supports' );
-
+ function add_clientes_support(){
+	 $clientes_support = array('editor', 'author', 'thumbnail', 'custom-fields');
+	 add_post_type_support( 'clientes', $clientes_support ) ;
+ }
+add_action('init', 'add_clientes_support');
 
 function add_scripts_to_page(){
 	wp_enqueue_style('fonts-style', get_template_directory_uri().'/css/fonts.css');
 	wp_enqueue_style('slick-g-style', get_template_directory_uri().'/css/slick.css');
 	wp_enqueue_style('slick-theme-style', get_template_directory_uri().'/css/slick-theme.css');
+	wp_enqueue_style('slicknav-theme-style', get_template_directory_uri().'/css/slicknav.css');
 	//wp_enqueue_script('jquery');
 	wp_register_script('add-proyectos-script',get_template_directory_uri().'/js/proyectos.js', array('jquery'), '',true);
 	wp_register_script('add-slick-slide-script', get_template_directory_uri().'/js/slick.js', '', '',true);
+	wp_register_script('add-slick-nav-script', get_template_directory_uri().'/js/jquery.slicknav.js', '', '',true);
 	wp_enqueue_script('add-proyectos-script');
 	wp_enqueue_script('add-slick-slide-script');
+	wp_enqueue_script('add-slick-nav-script');
 }
 
 function mytheme_customize_register( $wp_customize ) {
