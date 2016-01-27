@@ -1,4 +1,5 @@
-jQuery(document).ready(function($){
+(function($){
+$(document).ready(function($){
 	
 	// Logo en Blanco y Negro
 	$("input[id='upload_image_logo_button']").click(function(e){
@@ -66,3 +67,4 @@ jQuery(document).ready(function($){
 		return false;
 	});
 });
+})( jQuery );

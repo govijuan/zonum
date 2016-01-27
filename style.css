@@ -18,7 +18,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 body{
 	font: 16px Aileron-Regular, sans-serif;
-	background: #cccccc
+	background: #ffffff;
 }
 
 #container{
@@ -26,14 +26,14 @@ body{
 	}
 footer{
 	
-	color: #fff;
+	color: #234859;
 	position: fixed;
 	height: 25px;
 	text-align: center;
 	bottom: 15px;
 	
 }
-footer a{color: #234859}
+footer a{color: #d7460d}
 footer a:hover{color: #3c7a93;}
 
 .clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
@@ -51,10 +51,10 @@ header, footer, nav, #container{
     width: 100%;
     height: 100%;
     top: 0px;
-    opacity: 0.5;
+    opacity: 0.4;
     z-index: -1;
     background-repeat: no-repeat;
-    
+    background-position: center;
 }
 
 #rotateTablet {
@@ -82,13 +82,14 @@ header, footer, nav, #container{
 .mobile-logo, .b-w-logo-c{display: none;}
 #home-logo-container{width: 100%; position: absolute;}
 .animated-logo-holder{}
-.a-logo-subtitle{font-family: "DevilBreezeLight", sans-serif; font-size: 41px; text-align: center; margin: 10px 0;}
+.a-logo-subtitle{font-family: "DevilBreezeLight", sans-serif; font-size: 41px; text-align: center;margin: -38px 0;}
+.a-logo-subtitle span{display: inline-block; width: 600px; margin: 0 0 0 195px; letter-spacing: 14.4px;}
 .page-title-wrap{text-align: center; clear: both; position: relative;}
 .project-page-title-wrap{text-align: center; clear: both; }
-.project-page-title-wrap h1{font-family: "Uni-Sans-Thin", sans-serif; font-size: 3.5em; width: 500px; display: inline-block; color: #ffffff;}
-.page-title-wrap h1{color: #ffffff; text-align: center; font-family: "Uni-Sans-Thin", sans-serif;  display: inline-block;}
+.project-page-title-wrap h1{ font-size: 3.6em; display: inline-block; color: #ffffff;}
+.page-title-wrap h1{color: #ffffff; text-align: center; font-family: "Aileron-Regular", sans-serif;  display: inline-block;}
 #nosotros-content p, #zonum-content p {width: 48%;float: left; padding: 1%; font-size: 15px; text-align: justify;}
-#menu-menu-principal{width: 500px; z-index: 11;}
+#menu-menu-principal{width: 60%; z-index: 11;}
 .main-navigation{position: absolute;}
 nav ul li{display: inline-block; border-bottom: 2px solid #fff; border-top: 2px solid #fff; border-left: 2px solid #fff; margin-right: -5px;}
 nav ul li:last-child{border-right: 2px solid #fff;}
@@ -107,6 +108,7 @@ a{text-decoration: none; }
 .centered{ margin: 0 auto; padding: 14px;}
 .centered p, .centered h2{color: #ffffff;}
 
+
 /*Estilos para lo que está en destaque*/
 .h-featured-txt-wrapp{text-align: center; width: 980px; margin: 0 auto;}
 .h-featured-txt{ background: rgba(27, 27, 27, 0.3); width: 400px; display: inline-block; position: absolute; margin-top: 10px; top: 230px; left: 35%; width: 400px;}
@@ -114,7 +116,7 @@ a{text-decoration: none; }
 .h-featured-bg-img{width: 100%; height: auto; margin: 0px; display: block;}
 .projectMiniImg{ width: 400px; height: 260px; overflow: hidden; position: absolute; top: 320px}
 .photo-wrapper{ z-index: 0; }
-.text-wrapper{ overflow: hidden; position: absolute; top:0; color: #fff; word-wrap: break-word; text-align: center;margin: 0 5px; height: 100%; background: rgba(134,134,134,0.5);}
+.text-wrapper{ overflow: hidden; position: absolute; top:0; color: #fff; word-wrap: break-word; text-align: center;margin: 0 5px; height: 100%; background: rgba(13,18,31,0.5); transition: background 0.3s}
 .photo-wrapper{ margin: 0 5px; overflow: hidden;}
 .tit-proy-destaque{font-size: 30px;}
 .tit-proy-destaque a{color: #fff;}
@@ -128,6 +130,8 @@ a{text-decoration: none; }
 .proyecto-left-txt{text-align: justify;}
 .proyecto-txt-wrap h1{color: #ffffff; text-align: center; font-family: "Uni-Sans-Thin", sans-serif; font-size: 3.5em; width: 100%; display: inline-block;}
 .cat-projecto{margin: 10px 0 0 0;}
+.category-description{text-align: center;color: #ffffff; clear: both;}
+
 
 /* Css Responsive and frames for animations --------------------------------------------------------------------------------------------------*/
 
@@ -193,7 +197,7 @@ a{text-decoration: none; }
 	}
 	.page-title-wrap h1{font-size: 3.5em; width: 500px;}
 	.project-page-title-wrap{position: absolute;}
-	.project-page-title-wrap h1{ text-align: left;}
+	.project-page-title-wrap h1{ text-align: center;}
 	#container{position: absolute;}
 	#nosotros-container, #contacto-container {position: absolute;width: 100%;}
 	footer{position: fixed;}
@@ -230,7 +234,7 @@ a{text-decoration: none; }
 
 /* Styling for the Icons
 ---------------------------------------------------------------------------------------------------------------------------------*/
-a.facebook-g-link, a.linkedin-g-link, a.instagram-g-link{font-family: "Iconos-Zonum-Regular", sans-serif; color: #ffffff; line-height: 30pt; font-size: 18pt;}
+a.facebook-g-link, a.linkedin-g-link, a.instagram-g-link{font-family: "Iconos-Zonum-Regular", sans-serif; color: #234859; line-height: 30pt; font-size: 18pt;}
 /* Styling for the contact form
 ----------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -257,3 +261,22 @@ input, textarea{box-sizing: border-box;}
 
 .client-photo-wrapper img{width: 180px!important; width: 180px!important;}
 .cleinte-holder{width: 180px; margin: 0 7px; float: left;}
+
+/* Algunos links y botones
+-----------------------------------------------------------------------------------------------------------------------------------*/
+.biograf-link{padding: 4px 8px; color: #234859; background: #ffffff; margin: 0 0 0 10px;transition: color 0.5s, background 0.5s; webkit-transition: color 0.5s, background 0.5s}
+.biograf-link:hover{color: #ffffff; background: #234859; }
+
+/*Estilos para página de Biografía
+-----------------------------------------------------------------------------------------------------------------------------------*/
+.navegador-bio-wrap{ position:relative; float: left; width:28%; padding:1%;  text-align: right;}
+.navegador-bio-wrap ul li {margin: 5px 0;}
+.navegador-bio-wrap a{color: #234859; ,sans-serif; font-size: 1.2em; }
+.bio-content-wrap{width: 68%;float: left; position: relative; overflow-y: scroll;font-size: 15px; padding: 1%; text-align: justify; color: #ffffff;}
+.bio-content-wrap p{float: none!important; width: 100%!important;}
+.bio-evento-wrap{margin: 20px 0;}
+.foto-bio{display: inline-block; border-radius: 75px; vertical-align: middle; margin: 0 30px;}
+.nom-foto-wrap{margin: 0 0 20px 0;}
+.navegador-bio-wrap h3{color: #ffffff; font-size: 22px;}
+.bio-evento-wrap > p > a{display: inline-block}
+.bio-evento-wrap{text-align: left;}

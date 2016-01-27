@@ -4,6 +4,6 @@
 	<div class="animated-logo-holder" >
 		<img src="<?php echo get_option('govi_color_logo'); ?>" class="animated-logo-b-home-img" />
 	</div>
-	<div class="a-logo-subtitle">Escenografia</div>
+	<div class="a-logo-subtitle"><span>Escenografia</span></div>
 </div>
 <?php get_footer()?>

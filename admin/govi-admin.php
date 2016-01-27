@@ -55,22 +55,24 @@
 			govi_element_settings ();
 			govi_social_midia_links ();
 	?> 
-</div>
+	</div><!-- /div.tabs-->
 <div class="settings-bottom-strip"><a id="general-button" class="general-save-button" href="#">Guardar Opciones</a></div>
 </div>
 
 <?php }
     /*only in the theme options' page*/
 	function govi_enque_script(){
+		wp_enqueue_style( 'govi-js-ui-style', get_template_directory_uri()."/css/jquery-ui.css");
+		wp_enqueue_style( 'govi-js-ui-style-structure', get_template_directory_uri()."/css/jquery-ui.structure.css");
+		wp_enqueue_style( 'govi-js-ui-style-theme', get_template_directory_uri()."/css/jquery-ui.theme.css");
+		wp_enqueue_style( 'govi-js-ui-admin-style', get_template_directory_uri()."/css/admin.css");
+		
 		wp_enqueue_script('jquery');
 		wp_enqueue_media();
 		wp_enqueue_script('govi-framework-tabs', get_template_directory_uri()."/js/govi-featured.js", array('jquery') );
 		wp_enqueue_script('govi-js-ui-script', get_template_directory_uri(). "/js/jquery-ui.js");
 		wp_enqueue_script('govi-my-script', get_template_directory_uri(). "/js/my-script.js");
-		wp_enqueue_style( 'govi-js-ui-style', get_template_directory_uri()."/css/jquery-ui.css");
-		wp_enqueue_style( 'govi-js-ui-style-structure', get_template_directory_uri()."/css/jquery-ui.structure.css");
-		wp_enqueue_style( 'govi-js-ui-style-theme', get_template_directory_uri()."/css/jquery-ui.theme.css");
-		wp_enqueue_style( 'govi-js-ui-admin-style', get_template_directory_uri()."/css/admin.css");
+		
 		
 	}
 	/*-------------------------------------only in the theme options' page ends here---------------------------*/
@@ -97,7 +99,7 @@
 				<textarea id="our-analytics"><?php if( get_option('govi_analytics') == ""){ echo "Copie y pegue su c&oacute;digo de Google Analytics Aqu&iacute;!";} else { echo get_option('govi_analytics');} ?> 
 				</textarea>
 				
-				<div id="save-message-general" style="display:none"></div>
+				
 			</div> <!-- Close panel-body div -->
 		</div>  
 	
@@ -162,7 +164,7 @@
 				<input type="text" id="youtube-link" name="youtube-link" value="<?php echo get_option('govi_youtube_link'); ?>"/><br>
 			</div>
 		</div>
-	
+		<div id="save-message-general" style="display:none"></div>
 	<?php
 	}
 	

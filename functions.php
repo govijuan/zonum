@@ -90,9 +90,11 @@ function add_scripts_to_page(){
 	wp_enqueue_style('slick-g-style', get_template_directory_uri().'/css/slick.css');
 	wp_enqueue_style('slick-theme-style', get_template_directory_uri().'/css/slick-theme.css');
 	wp_enqueue_style('slicknav-theme-style', get_template_directory_uri().'/css/slicknav.css');
-	//wp_enqueue_script('jquery');
+	//wp_enqueue_style('simple-lightbox-style', get_template_directory_uri().'/css/simplelightbox.min.css');
+	wp_register_script('add-scrollpsy', get_template_directory_uri().'/js/scrollspy.js', '', '',true);
 	wp_register_script('add-proyectos-script',get_template_directory_uri().'/js/proyectos.js', array('jquery'), '',true);
 	wp_register_script('add-slick-slide-script', get_template_directory_uri().'/js/slick.js', '', '',true);
+	//wp_register_script('Simple-lightbox-script', get_template_directory_uri().'/js/simple-lightbox.min.js', '', '',true);
 	wp_register_script('add-slick-nav-script', get_template_directory_uri().'/js/jquery.slicknav.js', '', '',true);
 	wp_enqueue_script('add-proyectos-script');
 	wp_enqueue_script('add-slick-slide-script');

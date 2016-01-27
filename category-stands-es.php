@@ -1,9 +1,12 @@
 <?php get_header()?>
-<!--<div class="project-page-title-wrap"><h1>Escenografia + Stands + Eventos</h1></div>-->
-<div id="container">
+<div class="project-page-title-wrap category-title-wrap">
+	<h1><?php single_cat_title(); ?></h1>
+	<div class="category-description"><?php echo category_description(); ?></div>
+</div>
+<div id="container" class="slider-general">
 <div class="project-holder" >
 <?php
-	$args = array( 'post_type' => 'proyectos', 'category_name' => 'senalizacion-y-mobiliario', 'posts_per_page' => 10 );
+	$args = array( 'post_type' => 'proyectos', 'category_name' => 'stands-es', 'posts_per_page' => 10 );
 	$loop = new WP_Query( $args );
 	while ( $loop->have_posts() ) : $loop->the_post();?>
 		<div><a href="<?php the_permalink() ?>">

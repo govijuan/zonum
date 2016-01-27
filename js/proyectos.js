@@ -235,7 +235,9 @@ function setProyectsWrapperPosition(){
 	sliderObj.height = $('.project-holder').height();
 	if(windowWidth > 980){
 		sliderObj.sliderTopPosition = (windoHeight - sliderObj.height) / 2;
-		$('#container').css('top', sliderObj.sliderTopPosition + 'px');
+		if(($('.slider-general').length) > 0 ){
+			$('#container').css('top', sliderObj.sliderTopPosition + 'px');
+		}
 	}
 	else if(windowWidth < 981){
 		$('#container').css({
@@ -246,7 +248,11 @@ function setProyectsWrapperPosition(){
 }
  function setProyectsTittlePosition(){
  	if(windowWidth > 980){
-	 	$('.project-page-title-wrap').css({'bottom': (sliderObj.sliderTopPosition + sliderObj.height) + "px", 'left': navMenuObj.leftPosition + 'px'});
+ 	var menuPrincipalWidth = $('#menu-menu-principal').width();
+	 	$('.project-page-title-wrap').css({	'bottom': (sliderObj.sliderTopPosition + sliderObj.height + 20) + 'px', 
+	 										'left': navMenuObj.leftPosition + 'px', 
+	 										'width': menuPrincipalWidth + 'px'});
+	 										console.log(menuPrincipalWidth);
 	}
 	else if(windowWidth < 981){
 		$('.project-page-title-wrap').css({'bottom':  '', 'left':  ''});
@@ -267,8 +273,38 @@ function logoHoverAnimation(){
 		}
 	);
 }
+function putTargetAttrToGalery(){
+	$('.menu-item a').each(function () {
+    if ($(this).text() == 'Galeria') {
+        $(this).attr('target', '_blanc');
+    }
+});
+}
+//var simpleLightbox = $('.bio-1-feria a').simpleLightbox();
+function setBioContentWindowHeight(){
+	var bio = new Object;
+	bio.contentTitle = $('.page-title-wrap');
+	bio.contentTitle.height = bio.contentTitle.height();
+	bio.mainNavHeightAndMarg = ($('.main-navigation').height()) + 180;
+	bio.contentWrapHeight = (windoHeight - bio.contentTitle.height) - bio.mainNavHeightAndMarg;
+	$('.bio-content-wrap').css('height', bio.contentWrapHeight + 'px');
+}
 
+function bioScrollBehave(){
+	$('bio-evento-wrap').on('scrollSpy:enter', function() {
+	console.log('enter:', $(this).attr('id'));
+});
 
+$('bio-evento-wrap').on('scrollSpy:exit', function() {
+	console.log('exit:', $(this).attr('id'));
+});
+}
+
+/*function sensorBioLink(){
+	$('.bio-content-wrap').scroll(function(){
+		console.log($('.bio-1-feria:in-viewport').text());
+	});
+}*/
 $(document).ready(function(){
 	$('.menu').slicknav({
 		label: '',
@@ -283,6 +319,10 @@ $(document).ready(function(){
     if (($('#home-logo-container').length) > 0){
 	    setHomeLogosPositioning();
     }  
+    if( ($('.bio-content-wrap').length) > 0){
+	    setBioContentWindowHeight();
+    }
+    putTargetAttrToGalery();
     createClientesSlider();
     setCenteredPosition();
     setprojectsHolderWidth();
@@ -290,13 +330,28 @@ $(document).ready(function(){
     if(windowWidth > 980){
     	logoHoverAnimation();
     }
+    bioScrollBehave();
     setSlidedimentions();
     setProyectsWrapperPosition();
     setNavigationItems();
     setProyectsTittlePosition();
     setLogoPosition();
-	$('.project-over').mouseenter(function(){$(this).siblings('.text-wrapper').find('.proy-lower-info').fadeOut( 200 )});
-	$('.project-over').mouseleave(function(){$(this).siblings('.text-wrapper').find('.proy-lower-info').fadeIn( 200 )});		
+    if (($('.category-title-wrap').length) > 0){
+		    $('.project-over').mouseenter(function(){	$(this).siblings('.text-wrapper').fadeOut( 300 );
+													$(this).siblings('.text-wrapper').css('background', 'rgba(13,18,31,0)');
+									});
+			$('.project-over').mouseleave(function(){	$(this).siblings('.text-wrapper').fadeIn( 300 );
+													$(this).siblings('.text-wrapper').css('background', 'rgba(13,18,31,0.5)');
+									});
+    }
+    else{
+			$('.project-over').mouseenter(function(){	$(this).siblings('.text-wrapper').find('.proy-lower-info').fadeOut( 300 );
+														$(this).siblings('.text-wrapper').css('background', 'rgba(13,18,31,0)');
+										});
+			$('.project-over').mouseleave(function(){	$(this).siblings('.text-wrapper').find('.proy-lower-info').fadeIn( 300 );
+														$(this).siblings('.text-wrapper').css('background', 'rgba(13,18,31,0.5)');
+										});
+	}
 });
 
 $( window ).resize(function() {

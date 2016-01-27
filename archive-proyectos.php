@@ -1,5 +1,5 @@
 <?php get_header()?>
-<div id="container">
+<div id="container" class="slider-general">
 <div class="project-holder" >
 <?php
 	$args = array( 'post_type' => 'proyectos', 'posts_per_page' => 10 );

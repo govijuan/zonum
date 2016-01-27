@@ -6,7 +6,7 @@
 <div id="container" class="slider-general">
 <div class="project-holder" >
 <?php
-	$args = array( 'post_type' => 'proyectos', 'category_name' => 'stands', 'posts_per_page' => 10 );
+	$args = array( 'post_type' => 'proyectos', 'category_name' => 'senalizacion', 'posts_per_page' => 10 );
 	$loop = new WP_Query( $args );
 	while ( $loop->have_posts() ) : $loop->the_post();?>
 		<div><a href="<?php the_permalink() ?>">
